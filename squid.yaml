@@ -1,0 +1,24 @@
+manifestVersion: subsquid.io/v0.1
+name: polkadot-psp34-nft-indexing
+version: 1
+description: 'Squid polkadot nft psp34 indexing for astar'
+build: 
+deploy:
+  addons:
+    postgres: 
+  processor:
+    cmd:
+      - node
+      - lib/processor
+  api:
+    cmd:
+      - npx
+      - squid-graphql-server
+      - '--dumb-cache'
+      - in-memory
+      - '--dumb-cache-ttl'
+      - '1000'
+      - '--dumb-cache-size'
+      - '100'
+      - '--dumb-cache-max-age'
+      - '1000'

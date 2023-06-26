@@ -1,0 +1,16 @@
+type Token @entity {
+  id: ID!
+  contractAddress: String
+  tokenId: String
+  owner: String
+}
+
+type Transfer @entity {
+  id: ID!
+  contractAddress: String
+  tokenId: String
+  from: String
+  to: String
+  timestamp: DateTime!
+  block: Int!
+}
